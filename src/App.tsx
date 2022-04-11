@@ -1,25 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { AnswersHeadlessProvider } from '@yext/answers-headless-react';
+import  SearchBar from './SearchBar';
+import RecentSearch from './RecentSearch';
 
-function App() {
+const App = ()  => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AnswersHeadlessProvider
+      apiKey={'be41159ec3097b59708d3177052f4f07'}
+      experienceKey='support-hub'
+      locale='en'
+    >
+      <SearchBar/>
+      <RecentSearch/> 
+    </AnswersHeadlessProvider>
   );
 }
 
