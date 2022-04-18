@@ -1,12 +1,11 @@
-import { useAnswersState } from '@yext/answers-headless-react';
-import Result from './Result';
+import { Result, useAnswersState } from '@yext/answers-headless-react';
 
 
 const RecentSearch = () => {
 
   const answers = useAnswersState(state => state);
   const verticals = answers?.universal?.verticals;
-  let results: any = [] 
+  let results: Array<Result> = [] 
 
 
   if(verticals) {
@@ -18,13 +17,18 @@ const RecentSearch = () => {
 
             {
 
-                results?.map((result: any, index: number) => {
+                results?.map((result: Result, index: number) => {
 
                     const { rawData } = result
 
                     const { question, answer } = rawData
 
-                    return <Result key={index} question={question} answer={answer} />
+                    return (
+                        <article key={index} className="result">
+                            <h3 className="title"> {question} </h3> 
+                            <div className="body"> {answer}</div>
+                        </article>
+                    )
 
                 })
             }
