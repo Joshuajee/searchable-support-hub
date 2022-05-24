@@ -6,8 +6,8 @@ const App = ()  => {
 
   return (
     <AnswersHeadlessProvider
-      apiKey={'be41159ec3097b59708d3177052f4f07'}
-      experienceKey='support-hub'
+      apiKey={'Your api key'}
+      experienceKey='your experience key'
       locale='en'
     >
       <SearchBar/>
